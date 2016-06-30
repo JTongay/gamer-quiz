@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Gamer Quiz
+  </title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Orbitron|Play' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <section class="intro">
+    <h1 class="welcome">Welcome to the Gamer Quiz!</h1>
+    <ul class="logos">
+      <li id="ps4-logo"></li>
+      <li id="pc-logo"></li>
+      <li id="xbox-logo"></li>
+    </ul>
+    <div class="message">
+      <h3>This quiz will test your might, in modern video games, based on the platforms above.</h3>
+    </div>
+    <form action="submit" id="start_button">
+      <button type="button" id="start">Start the Quiz!</button>
+    </form>
+  </section>
+  <section class="questions">
+    <form action="submit" id="start-over">
+      <button type="button" id="restart">Start Over</button>
+    </form>
+    <div class="question">
+      <h1>Question 1</h1>
+    </div>
+    <div class="gameshow">
+    </div>
+    <div class="skill"><span id="progress">Progress</span>
+      <div class="outer">
+        <div class="inner" data-progress="57%">
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <ul class="answers">
+      <li>
+        <input type="radio" name="answer" value="answer1"> Answer 11
+        <br>
+      </li>
+      <li>
+        <input type="radio" name="answer" value="answer2"> Answer 2
+        <br>
+      </li>
+      <li>
+        <input type="radio" name="answer" value="answer3"> Answer 3
+        <br>
+      </li>
+      <li>
+        <input type="radio" name="answer" value="answer4"> Answer 4
+        <br>
+      </li>
+    </ul>
+    <form id=submit-answer>
+      <button type="submit" id="enter-answer">Submit</button>
+    </form>
+    <div class="position">
+      <div class="answer-expl">
+        <div class="show-expl" style="display: block">
+          <p>Insert Correct Answer Information Here.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="scorescreen">
+    <div id="game-over">
+    </div>
+    <div class="score">
+      <h2>You scored (x/5 or %) correct! Wanna play again?</h2>
+    </div>
+    <form action="submit" id="play-again">
+      <button type="submit" id="restart-game">Play Again</button>
+    </form>
+  </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,317 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+
+/* ----- intro portion starts here ----- */
+
+.welcome {
+  text-align: center;
+  padding-top: 20px;
+}
+
+
+/*.logos .pics {
+  list-style-type: none;
+  display: inline-block;
+  min-width: 13.33333333%;
+  padding-left: 12.4em;
+  padding-top: 150px;
+  margin: 0 auto;
+}*/
+
+#ps4-logo {
+  background-image: url('../images/ps4-logo.jpg');
+  width: 150px;
+  height: 150px;
+  background-size: contain;
+  margin-right: 45px;
+  border-radius: 50%
+}
+
+#pc-logo {
+  background-image: url('../images/pc-logo.png');
+  width: 150px;
+  height: 150px;
+  -webkit-background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 45px;
+  border-radius: 10%;
+}
+
+#xbox-logo {
+  background-image: url('../images/Xbox-one-logo.jpg');
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 45px;
+  border-radius: 13%;
+}
+
+.logos {
+  max-width: 700px;
+  margin: 0 auto;
+  padding-left: 130px;
+  padding-top: 90px;
+}
+
+.logos li {
+  display: inline-block;
+  list-style: none;
+  margin: 0 auto;
+  max-width: 100%;
+  background-position: center;
+}
+
+.message {
+  text-align: center;
+  padding-top: 100px;
+  height:
+}
+
+#start_button {
+  margin-top: 40px;
+  text-align: center;
+  padding: 5px;
+}
+
+#start {
+  font-family: 'Play', sans-serif;
+  color: black;
+  background-color: #3C5B4B;
+  border-radius: 33%;
+  padding: 5px;
+}
+
+#start:hover {
+  background-color: #443E59;
+  border-color: #32303C;
+  cursor: pointer;
+}
+
+.intro {
+  background-color: #272422;
+  color: #3C5B4B;
+  padding-bottom: 275px;
+  padding-top: 15px;
+  font-family: 'Orbitron', sans-serif;
+  /*display: none;*/
+}
+
+
+/* ------ intro portion stops here ----- */
+
+
+/* ------ Quiz portion starts here ------ */
+
+
+/* ------ Start Over Button ----- */
+
+#start-over {
+  padding: 15px 10px;
+}
+
+#restart {
+  background-color: #3C5B4B;
+  font-family: 'Play', sans-serif;
+  border-radius: 33%;
+  padding: 5px;
+  color: black;
+}
+
+#restart:hover {
+  background-color: #1D3D2D;
+  border-color: #32303C;
+  cursor: pointer;
+}
+
+
+/* ----- Question ----- */
+
+.question {
+  text-align: center;
+}
+
+.gameshow {
+  background-image: url('../images/steam-logo.jpg');
+  margin: 0 auto;
+  height: 200px;
+  width: 300px;
+  display: block;
+  background-size: contain;
+}
+
+.answers {
+  width: 200px;
+  margin: 0 auto;
+  padding-top: 5px;
+}
+
+.answers li {
+  list-style: none;
+  text-align: center;
+  padding-top: 13px;
+}
+
+#submit-answer {
+  text-align: center;
+  margin: 0 auto;
+  width: 200px;
+  padding-top: 13px;
+}
+
+#enter-answer {
+  background-color: #3C5B4B;
+  font-family: 'Play', sans-serif;
+  border-radius: 33%;
+  padding: 5px;
+  color: black;
+}
+
+#enter-answer:hover {
+  background-color: #1D3D2D;
+  border-color: #32303C;
+  cursor: pointer;
+}
+
+
+/* ----- Progress Bar -------- */
+
+.skill {
+  float: right;
+  padding-right: 40px;
+  text-align: center;
+}
+
+.outer {
+  width: 30px;
+  height: 140px;
+  border: 2px solid #ccc;
+  overflow: hidden;
+  position: relative;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.inner,
+.inner div {
+  width: 100%;
+  overflow: hidden;
+  left: -2px;
+  position: absolute;
+}
+
+.inner {
+  border: 2px solid #999;
+  border-top-width: 0;
+  background-color: #999;
+  bottom: 0;
+  height: 20%;
+}
+
+.inner div {
+  border: 2px solid orange;
+  border-bottom-width: 0;
+  background-color: orange;
+  top: 0;
+  width: 100%;
+  height: 5px;
+}
+
+#progress {
+  text-align: center;
+  padding-right: 30px;
+}
+
+
+/* ------ Progress Bar Ends Here ------- */
+
+
+/* ------ Answer Explanation ------ */
+
+.answer-expl {
+  float: left;
+  width: 300px;
+  height: 200px;
+  margin: 15px 0px 15px 60px;
+  border: 2px solid #3C5B4B;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.show-expl {
+  height: 222px;
+  color: #818055;
+}
+
+.position {
+  margin: 0 auto;
+  width: 400px;
+}
+
+
+/* ----- Answer Explanation Ends Here ----- */
+
+.questions {
+  background-color: #22202C;
+  padding-bottom: 300px;
+  color: #3C5B4B;
+  font-family: 'Orbitron', sans-serif;
+  /*display: none;*/
+}
+
+
+/* ----- Quiz Portion Ends Here ----- */
+
+
+/* ----- Game Over Screen Starts Here ----- */
+
+#game-over {
+  background-image: url('../images/Game-Over.jpg');
+  height: 400px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  max-width: 100%;
+  width: 700px;
+  margin: 0 auto;
+}
+
+.score {
+  text-align: center;
+  padding-top: 75px;
+}
+
+#play-again {
+  text-align: center;
+  padding-top: 50px;
+}
+
+#restart-game {
+  background-color: #3C5B4B;
+  font-family: 'Play', sans-serif;
+  border-radius: 33%;
+  padding: 5px;
+  color: black;
+}
+
+#restart-game:hover {
+  background-color: #1D3D2D;
+  border-color: #32303C;
+  cursor: pointer;
+  font-family: 'Play', sans-serif;
+}
+
+.scorescreen {
+  /*display: none;*/
+  background-color: #272422;
+  padding-bottom: 115px;
+  font-family: 'Orbitron', sans-serif;
+  color: #3C5B4B;
+}
