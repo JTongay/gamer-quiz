@@ -30,7 +30,7 @@
   height: 150px;
   background-size: contain;
   margin-right: 45px;
-  border-radius: 50%
+  border-radius: 50%;
 }
 
 #pc-logo {
@@ -139,7 +139,7 @@
 }
 
 .gameshow {
-  background-image: url('../images/steam-logo.jpg');
+  /*background-image: url("../images/steam-logo.jpg");*/
   margin: 0 auto;
   height: 200px;
   width: 300px;
@@ -244,6 +244,7 @@
   border: 2px solid #3C5B4B;
   font-size: 1.2em;
   text-align: center;
+  display: none;
 }
 
 .show-expl {
@@ -264,7 +265,7 @@
   padding-bottom: 300px;
   color: #3C5B4B;
   font-family: 'Orbitron', sans-serif;
-  /*display: none;*/
+  display: none;
 }
 
 
@@ -309,7 +310,7 @@
 }
 
 .scorescreen {
-  /*display: none;*/
+  display: none;
   background-color: #272422;
   padding-bottom: 115px;
   font-family: 'Orbitron', sans-serif;
