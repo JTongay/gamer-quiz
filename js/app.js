@@ -88,10 +88,7 @@
     };
 
     function imageChange() {
-      if (currentQuestion == 0) {
-
-        $('.gameshow').css('background', "transparent url('/images/steam-logo.jpg')").show();
-      } else if (currentQuestion == 1) {
+      if (currentQuestion == 1) {
         $('.gameShow').css('background', "transparent url('/images/overwatch.png')");
       } else if (currentQuestion == 2) {
         $('.gameshow').css('background', "transparent url('/images/geralt.jpg')");
