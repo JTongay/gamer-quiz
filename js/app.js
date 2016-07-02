@@ -54,6 +54,8 @@
     });*/
     $(document).on('click', '#start_button', startGame);
     $(document).on('click', '#start-over', startOver);
+    $(document).on('click', '#submit-answer', answerCheck);
+
 
 
 
@@ -62,9 +64,10 @@
 
     function startGame(e) {
       $('.intro').hide();
+      $('.scorescreen').hide();
       $('.questions').show();
       loadQuestion();
-      //imageChange();
+      imageChange();
       loadAnswers();
       e.preventDefault;
     };
@@ -75,7 +78,7 @@
     };
 
     function loadQuestion() {
-      var newQuestion = '<span id="question-gen">' + allObjects[currentQuestion].question + '</span>';
+      var newQuestion = '<div class="question"><h1>' + allObjects[currentQuestion].question + '</h1></div>';
       $('.question').html(newQuestion);
     };
 
@@ -83,6 +86,35 @@
       var answers = '<li id="button0"><input type="radio" name="answer" value="answer1">' + allObjects[currentQuestion].answers[0] + '</li><li id="button1"><input type="radio" name="answer" value="answer2">' + allObjects[currentQuestion].answers[1] + '</li><li id="button2"><input type="radio" name="answer" value="answer3">' + allObjects[currentQuestion].answers[2] + '</li><li id="button3"><input type="radio" name="answer" value="answer4">' + allObjects[currentQuestion].answers[3];
       $('.answers').html(answers);
     };
+
+    function imageChange() {
+      if (currentQuestion == 0) {
+
+        $('.gameshow').css('background', "transparent url('/images/steam-logo.jpg')").show();
+      } else if (currentQuestion == 1) {
+        $('.gameShow').css('background', "transparent url('/images/overwatch.png')");
+      } else if (currentQuestion == 2) {
+        $('.gameshow').css('background', "transparent url('/images/geralt.jpg')");
+      } else if (currentQuestion == 3) {
+        $('.gameshow').css('background', "transparent url('/images/halo-master-chief.jpg')");
+      } else if (currentQuestion == 4) {
+        $('.gameshow').css('background', "transparent url('/images/solaire.jpg')");
+      }
+    };
+
+    function answerCheck() {
+      var answer = $("input[type='radio']:checked").val();
+      event.preventDefault();
+      if (answer == undefined) {
+        alert("Please select an answer");
+      } else if (answer == allObjects[currentQuestion].correctAnswer) {
+        console.log("Correct!");
+        numberCorrect++;
+
+      }
+    };
+
+
 
   });
 
