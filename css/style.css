@@ -147,13 +147,13 @@
   background-size: contain;
 }
 
-.answers {
+#answers {
   width: 200px;
   margin: 0 auto;
   padding-top: 5px;
 }
 
-.answers li {
+#answers li {
   list-style: none;
   text-align: center;
   padding-top: 13px;
