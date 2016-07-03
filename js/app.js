@@ -54,7 +54,7 @@
     });*/
     $(document).on('click', '#start_button', startGame);
     $(document).on('click', '#start-over', startOver);
-    $(document).on('click', '#submit-answer', answerCheck);
+    $('.questions').on('click', '#enter-answer', answerCheck);
 
 
 
@@ -66,6 +66,7 @@
       $('.intro').hide();
       $('.scorescreen').hide();
       $('.questions').show();
+      $('.answer-expl').hide();
       loadQuestion();
       imageChange();
       loadAnswers();
@@ -87,6 +88,11 @@
       $('.answers').html(answers);
     };
 
+    function loadInfo() {
+      var info = '<div class="show-expl"><p>' + allObjects[currentQuestion].answerInfo + '</p></div>';
+      $('.show-expl').html(info);
+    }
+
     function imageChange() {
       if (currentQuestion == 1) {
         $('.gameShow').css('background', "transparent url('/images/overwatch.png')");
@@ -101,13 +107,21 @@
 
     function answerCheck() {
       var answer = $("input[type='radio']:checked").val();
-      event.preventDefault();
+      //event.preventDefault();
       if (answer == undefined) {
         alert("Please select an answer");
       } else if (answer == allObjects[currentQuestion].correctAnswer) {
         console.log("Correct!");
+        $('input[type="radio"]').attr("disabled", true);
         numberCorrect++;
+        $('.answer-expl').fadeIn();
+        loadInfo();
 
+
+      } else {
+        console.log("Wrong");
+        $('.answer-expl').fadeIn();
+        loadInfo();
       }
     };
 

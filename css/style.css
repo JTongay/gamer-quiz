@@ -244,6 +244,7 @@
   border: 2px solid #3C5B4B;
   font-size: 1.2em;
   text-align: center;
+  display: none;
 }
 
 .show-expl {
