@@ -39,7 +39,7 @@
       correctAnswer: 2,
       answers: ["Sif", "Onion Knight", "Solaire", "Cloud"],
       buttonCheck: ["#button0", "button1", "button2", "button3"],
-      answerInfo: "In the game, you have the option to either save him or kill him. If you save him, he can help you fight the final boss, Gwyn."
+      answerInfo: "In the game, you have the option to either save him or kill Solaire. If you save him, he can help you fight the final boss, Gwyn."
     }];
 
     //EVENT HANDLERS FOR CLICKS
@@ -178,8 +178,8 @@
     };
 
     function restartGame() {
-      var numberCorrect = 0;
-      var currentQuestion = 0;
+      numberCorrect = 0;
+      currentQuestion = 0;
       $('.intro').show();
       $('.scorescreen').hide();
 
