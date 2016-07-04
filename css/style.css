@@ -30,7 +30,7 @@
   height: 150px;
   background-size: contain;
   margin-right: 45px;
-  border-radius: 50%;
+  border-radius: 50%
 }
 
 #pc-logo {
@@ -138,8 +138,8 @@
   text-align: center;
 }
 
-.gameshow {
-  /*background-image: url("../images/steam-logo.jpg");*/
+#gameshow {
+  /*background-image: url('../images/steam-logo.jpg');*/
   margin: 0 auto;
   height: 200px;
   width: 300px;
