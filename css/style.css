@@ -156,7 +156,7 @@
 
 #answers li {
   list-style: none;
-  text-align: center;
+  margin-left: 30%;
   padding-top: 13px;
 }
 
@@ -266,7 +266,7 @@
   padding-bottom: 300px;
   color: #3C5B4B;
   font-family: 'Orbitron', sans-serif;
-  /*display: none;*/
+  display: none;
 }
 
 
@@ -311,7 +311,7 @@
 }
 
 .scorescreen {
-  /*display: none;*/
+  display: none;
   background-color: #272422;
   padding-bottom: 115px;
   font-family: 'Orbitron', sans-serif;

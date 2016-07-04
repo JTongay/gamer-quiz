@@ -42,52 +42,34 @@
       answerInfo: "In the game, you have the option to either save him or kill him. If you save him, he can help you fight the final boss, Gwyn."
     }];
 
-    //$(document).on('click', '#start_button', startGame);
-    //$('.questions').on('click', '#start-over', startOver)
-    /*$(document).on('click', '#start_button', function (e) {
-      $('.intro').hide();
-      $('.questions').show();
-      loadQuestion();
-      //imageChange();
-      loadAnswers();
-      e.preventDefault;
-    });*/
+    //EVENT HANDLERS FOR CLICKS
     $(document).on('click', '#start_button', startGame);
-    $(document).on('click', '#start-over', startOver);
+    $(document).on('click', '#start-over', overview);
     $('.questions').on('click', '#enter-answer', answerCheck);
-    /*$(document).on('click', '#next', function (event) {
-      if (currentQuestion < 5) {
-        event.preventDefault();
-        currentQuestion++;
-        loadQuestion();
-        loadAnswers();
-        imageChange();
-        answerCheck();
-
-        $('.answer-expl').hide();
-      } else {
-        $('.questions').fadeOut();
-        $('.scorescreen').fadeIn();
-      }
-      event.preventDefault();
-    })*/
     $(document).on('click', '#next', playGame);
+    $('.scorescreen').on('click', '#restart-game', function (event) {
+      restartGame();
+      event.preventDefault();
+    });
+
 
 
 
 
     function playGame() {
-      if (currentQuestion < 5) {
+      if (currentQuestion < 4) {
         event.preventDefault();
         currentQuestion++;
         loadQuestion();
         loadAnswers();
         imageChange();
-        //answerCheck();
+
         $('.answer-expl').hide();
       } else {
+        $('#next').text('Check Score');
         $('.questions').fadeOut();
         $('.scorescreen').fadeIn();
+        checkScore();
       }
       event.preventDefault();
     }
@@ -104,9 +86,10 @@
       e.preventDefault;
     };
 
-    function startOver() {
+    function overview() {
       $('.questions').hide();
       $('.intro').show();
+
     };
 
     function loadQuestion() {
@@ -121,15 +104,21 @@
       $('.answers').html(answers);*/
       $('#answers').empty();
       for (var i = 0; i <= 3; i++) {
-        document.getElementById('answers').innerHTML += '<li><input type="radio" name="answer" value=' + i + '>' + allObjects[currentQuestion].answers[i] + '</li>'
+        document.getElementById('answers').innerHTML += '<li class="choices"><input type="radio" name="answer" value=' + i + '>' + ' ' + allObjects[currentQuestion].answers[i] + '</li>'
       }
     };
 
-    function loadInfo() {
-      var info = '<div class="show-expl"><p>' + ' ' + allObjects[currentQuestion].answerInfo + ' ' + '</p><button id="next">Next Question</button></div>';
-      $('.show-expl').html(info);
+    function loadCorrectInfo() {
+      var rightInfo = '<div class="show-expl"><p>' + ' CORRECT! ' + allObjects[currentQuestion].answerInfo + ' ' + '</p><button id="next">Next Question</button></div>';
+      $('.show-expl').html(rightInfo);
 
-    }
+
+    };
+
+    function loadIncorrectInfo() {
+      var wrongInfo = '<div class="show-expl"><p>' + ' INCORRECT! ' + allObjects[currentQuestion].answerInfo + ' ' + '</p><button id="next">Next Question</button></div>';
+      $('.show-expl').html(wrongInfo);
+    };
 
     function imageChange() {
       if (currentQuestion == 0) {
@@ -155,22 +144,46 @@
         $('input[type="radio"]').attr("disabled", true);
         numberCorrect++;
         $('.answer-expl').fadeIn();
-        loadInfo();
+        loadCorrectInfo();
+        progressBar();
 
 
       } else {
         console.log("Wrong");
         $('input[type="radio"]').attr("disabled", true);
         $('.answer-expl').fadeIn();
-        loadInfo();
-      }
+        loadIncorrectInfo();
+        progressBar();
 
+      }
+    };
+
+    function progressBar() {
+      if (currentQuestion == 0) {
+        $('.inner').css("height", "20%");
+      } else if (currentQuestion == 1) {
+        $('.inner').css("height", "40%");
+      } else if (currentQuestion == 2) {
+        $('.inner').css("height", "60%");
+      } else if (currentQuestion == 3) {
+        $('.inner').css("height", "80%");
+      } else if (currentQuestion == 4) {
+        $('.inner').css("height", "100%");
+      }
+    };
+
+    function checkScore() {
+      var showScore = '<div class="score"><h2>' + 'You scored ' + numberCorrect + ' out of 5 correct! Wanna play again?' + '</h2></div>';
+      $('.score').html(showScore);
+    };
+
+    function restartGame() {
+      var numberCorrect = 0;
+      var currentQuestion = 0;
+      $('.intro').show();
+      $('.scorescreen').hide();
 
 
     };
-
-
-
   });
-
 })();
