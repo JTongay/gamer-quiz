@@ -55,25 +55,42 @@
     $(document).on('click', '#start_button', startGame);
     $(document).on('click', '#start-over', startOver);
     $('.questions').on('click', '#enter-answer', answerCheck);
-    $(document).on('click', '#next', function (event) {
+    /*$(document).on('click', '#next', function (event) {
       if (currentQuestion < 5) {
+        event.preventDefault();
         currentQuestion++;
         loadQuestion();
         loadAnswers();
         imageChange();
         answerCheck();
+
         $('.answer-expl').hide();
       } else {
         $('.questions').fadeOut();
         $('.scorescreen').fadeIn();
       }
       event.preventDefault();
-    })
+    })*/
+    $(document).on('click', '#next', playGame);
 
 
 
 
-
+    function playGame() {
+      if (currentQuestion < 5) {
+        event.preventDefault();
+        currentQuestion++;
+        loadQuestion();
+        loadAnswers();
+        imageChange();
+        //answerCheck();
+        $('.answer-expl').hide();
+      } else {
+        $('.questions').fadeOut();
+        $('.scorescreen').fadeIn();
+      }
+      event.preventDefault();
+    }
 
 
     function startGame(e) {
@@ -102,26 +119,29 @@
     function loadAnswers() {
       /*var answers = '<li id="button0"><input type="radio" name="answer" value="answer1">' + allObjects[currentQuestion].answers[0] + '</li><li id="button1"><input type="radio" name="answer" value="answer2">' + allObjects[currentQuestion].answers[1] + '</li><li id="button2"><input type="radio" name="answer" value="answer3">' + allObjects[currentQuestion].answers[2] + '</li><li id="button3"><input type="radio" name="answer" value="answer4">' + allObjects[currentQuestion].answers[3];
       $('.answers').html(answers);*/
+      $('#answers').empty();
       for (var i = 0; i <= 3; i++) {
         document.getElementById('answers').innerHTML += '<li><input type="radio" name="answer" value=' + i + '>' + allObjects[currentQuestion].answers[i] + '</li>'
       }
     };
 
     function loadInfo() {
-      var info = '<div class="show-expl"><p>' + allObjects[currentQuestion].answerInfo + '</p><button id="next">Next Question</button></div>';
+      var info = '<div class="show-expl"><p>' + ' ' + allObjects[currentQuestion].answerInfo + ' ' + '</p><button id="next">Next Question</button></div>';
       $('.show-expl').html(info);
 
     }
 
     function imageChange() {
-      if (currentQuestion == 1) {
-        $('.gameShow').css('background-image', "url('/images/overwatch.png')");
+      if (currentQuestion == 0) {
+        $('#gameshow').css("backgroundImage", "url(images/steam-logo.jpg)");
+      } else if (currentQuestion == 1) {
+        $('#gameshow').css("backgroundImage", "url(images/overwatch-logo.png)");
       } else if (currentQuestion == 2) {
-        $('.gameshow').css('background-image', "url('/images/geralt.jpg')");
+        $('#gameshow').css("backgroundImage", "url(images/geralt.jpg)");
       } else if (currentQuestion == 3) {
-        $('.gameshow').css('background-image', "url('/images/halo-master-chief.jpg')");
+        $('#gameshow').css("backgroundImage", "url(images/halo-master-chief.jpg)");
       } else if (currentQuestion == 4) {
-        $('.gameshow').css('background-image', "url('/images/solaire.jpg')");
+        $('#gameshow').css("backgroundImage", "url(images/solaire.jpg)");
       }
     };
 
@@ -144,6 +164,7 @@
         $('.answer-expl').fadeIn();
         loadInfo();
       }
+
 
 
     };

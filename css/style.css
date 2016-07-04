@@ -138,13 +138,14 @@
   text-align: center;
 }
 
-.gameshow {
-  background-image: url('../images/steam-logo.jpg');
+#gameshow {
+  /*background-image: url('../images/steam-logo.jpg');*/
   margin: 0 auto;
   height: 200px;
   width: 300px;
   display: block;
   background-size: contain;
+  background-repeat: no-repeat;
 }
 
 #answers {
@@ -213,7 +214,7 @@
   border-top-width: 0;
   background-color: #999;
   bottom: 0;
-  height: 20%;
+  height: 0%;
 }
 
 .inner div {
