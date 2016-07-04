@@ -145,17 +145,18 @@
   width: 300px;
   display: block;
   background-size: contain;
+  background-repeat: no-repeat;
 }
 
-.answers {
+#answers {
   width: 200px;
   margin: 0 auto;
   padding-top: 5px;
 }
 
-.answers li {
+#answers li {
   list-style: none;
-  text-align: center;
+  margin-left: 30%;
   padding-top: 13px;
 }
 
@@ -213,7 +214,7 @@
   border-top-width: 0;
   background-color: #999;
   bottom: 0;
-  height: 20%;
+  height: 0%;
 }
 
 .inner div {
