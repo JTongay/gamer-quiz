@@ -98,7 +98,7 @@
 .intro {
   background-color: #272422;
   color: #3C5B4B;
-  padding-bottom: 275px;
+  height: calc(100vh);
   padding-top: 15px;
   font-family: 'Orbitron', sans-serif;
   /*display: none;*/
@@ -263,7 +263,7 @@
 
 .questions {
   background-color: #22202C;
-  padding-bottom: 300px;
+  height: calc(120vh);
   color: #3C5B4B;
   font-family: 'Orbitron', sans-serif;
   display: none;
@@ -313,7 +313,7 @@
 .scorescreen {
   display: none;
   background-color: #272422;
-  padding-bottom: 115px;
+  height: calc(100vh);
   font-family: 'Orbitron', sans-serif;
   color: #3C5B4B;
 }
